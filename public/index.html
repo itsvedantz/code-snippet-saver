@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Snippet Saver</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Save Your Code Snippets</h1>
+        <form id="snippetForm">
+            <input type="text" id="title" placeholder="Snippet Title" required>
+            <textarea id="code" placeholder="Your Code" required></textarea>
+            <input type="text" id="language" placeholder="Programming Language" required>
+            <button type="submit">Save Snippet</button>
+        </form>
+        <div id="snippets"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
