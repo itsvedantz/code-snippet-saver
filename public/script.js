@@ -17,6 +17,24 @@ document.getElementById('snippetForm').addEventListener('submit', async (e) => {
         document.getElementById('snippetForm').reset();
         loadSnippets();
     }
+    try {
+        const response = await fetch('/snippets', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ title, code, language }),
+        });
+      
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+      
+        const data = await response.json();
+        // ...
+      } catch (error) {
+        console.error('Error creating snippet:', error);
+      }
 });
 
 async function loadSnippets() {
